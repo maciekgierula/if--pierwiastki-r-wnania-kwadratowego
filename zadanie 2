@@ -1,0 +1,80 @@
+using System;
+
+namespace zadanie_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Podaj liczbę naturalną: ");
+            //int liczba = Convert.ToInt32(Console.ReadLine());
+            //if (liczba % 2 == 0 ) Console.WriteLine("Podzielna przez 2");
+            //else if (liczba % 5 == 0) Console.WriteLine("Podzielna przez 5");
+            //else if (liczba % (2 * 5) == 0) Console.WriteLine("Podzielna przez 10");
+            //else Console.WriteLine("Nie jest podzielna przez żadna liczbę");
+            ////switch (liczba)
+            //{
+            //    case 1:
+            //    case 2:
+            //    case 3:
+            //    case 5:
+            //    case 7:
+            //        Console.WriteLine("Liczba pierwsza");
+            //        break;
+            //    case 4:
+            //        Console.WriteLine("Liczba parzysta");
+            //        break;
+            //    case 6:
+            //        Console.WriteLine("Liczba podzielna przez 2 i przez 3");
+            //        break;
+            //}
+            //Console.WriteLine("Podaj liczbę całkowitą od 1 do 7: ");
+            //int liczba = Convert.ToInt32(Console.ReadLine());
+
+            //if (liczba % 2 == 0 && liczba != 2) Console.WriteLine("Parzysta");
+            //else if (liczba % 3 == 0) Console.WriteLine("Podzielna przez 3");
+            //else Console.WriteLine("Liczba pierwsza");
+            class Program
+        {
+            static uint input;
+            static void Main(string[] args)
+            {
+                Console.WriteLine("Podaj liczbę naturalną: ");
+                //int: –2147483648 to 2147483647
+                //uint: 0 to 4294967295
+                input = Convert.ToUInt32(Console.ReadLine());
+
+                int[] numbers = { 2, 5, 10 };
+
+                int count = 0;
+                foreach (var num in numbers)
+                {
+                    var res = isDivisible(num);
+
+                    if (res)
+                    {
+                        count++;
+                    }
+                }
+
+                if (count == 0)
+                {
+                    Console.WriteLine("Liczba {0} nie jest podzielna przez {1}", input, string.Join(", ", numbers));
+                }
+
+                Console.ReadKey();
+            }
+            static bool isDivisible(int divider)
+            {
+                var isDivisible = input % divider == 0;
+
+                if (isDivisible)
+                    Console.WriteLine("Liczba {0} jest podzielna przez {1}", input, divider);
+
+                return isDivisible;
+            }
+        }
+        Console.ReadKey();
+        }
+    }
+}
