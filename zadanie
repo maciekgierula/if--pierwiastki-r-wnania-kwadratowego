@@ -1,0 +1,37 @@
+using System;
+
+namespace Zadanie_3_praca_domowa
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("a i b i c : "); 
+            double a= Convert.ToDouble(Console.ReadLine());
+            double b = Convert.ToDouble(Console.ReadLine());
+            double c = Convert.ToDouble(Console.ReadLine());
+
+            double Rk = Math.Round(Math.Pow(b, 2) - 4 * a * c);
+            double x, x1, x2;
+            if (Rk > 0)
+            {
+                double x1 = (-b - Math.Sqrt(Rk) / 2 * a);
+                double x2 = (-b + Math.Sqrt(Rk) / 2 * a);
+
+                Console.WriteLine("Rk: {0} i {1}. 2 rozwiązania", Rk);
+            }
+            else if (Rk == 0)
+            {
+                double x =( -b /(2 * a));
+                Console.WriteLine("Rk: {0}. jedno rozwiązanie= ", Rk);
+            }
+            else if (Rk < 0)
+            {
+                Console.WriteLine("Rk: {0}. brak rozwiazań", Rk);
+            }
+            else Console.WriteLine("RK: {0}. Otyłość", Rk);
+            Console.WriteLine("Wynik = ");
+            Console.ReadKey();
+        }
+    }
+}
